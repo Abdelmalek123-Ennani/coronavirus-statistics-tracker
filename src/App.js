@@ -1,24 +1,27 @@
-import logo from './logo.svg';
+import Header from "./components/Header";
+import Nav from "./components/Nav";
+import Measures from "./components/Measures"
+import FetchContent from "./components/FetchContent";
+import MoreInfo from "./components/MoreInfo";
+import CoutryData from "./components/CoutryData";
+import { BrowserRouter as Router , Switch , Route } from 'react-router-dom'
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+        <Nav />
+        <Switch>
+          <Route exact path="/" component={ FetchContent} />
+          <Route   path="/measures" component={ Measures} />
+          <Route exact path="/more" component={ MoreInfo} />
+          <Route  path="/more/:id" component={ CoutryData } />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
