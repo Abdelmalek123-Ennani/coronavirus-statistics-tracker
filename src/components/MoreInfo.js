@@ -1,5 +1,7 @@
 import React from 'react'
 
+
+// more Info Component
 function MoreInfo() {
     return (
         <section className="moreInfo">
