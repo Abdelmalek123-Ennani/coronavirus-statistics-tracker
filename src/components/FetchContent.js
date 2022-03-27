@@ -4,6 +4,7 @@ import { Link , BrowserRouter as Router } from 'react-router-dom';
 import Spinner from "./Spinner";
 
 
+// get the content from the api
 class FetchContent extends Component {
 
     state = {
